@@ -1,0 +1,26 @@
+.net-nav {
+	background: #B71C1C;
+	position: fixed;
+    top: 0;
+    h1 {
+	    margin: auto;
+	}
+}
+
+.net-sidenav-container {
+ 	width: 100%;
+	height: 100vh;
+}
+
+.net-sidenav-content {
+	display: block;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+    padding-top: 64px;
+}
+
+.net-sidenav {
+	width: 230px;
+	padding: 20px;
+}

@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/reset.css";
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+.net-body {
+	background: #303030;
+}
+
+.net-container {
+	width: 1000px;
+	margin: auto;
+}
