@@ -1,8 +1,16 @@
-.net-searchbar {
+:host ::ng-deep .net-searchbar {
 	text-align: center;
 	margin-top: 30px;
 	.mat-input-container {
 		width: 50%;
 	    margin-right: 20px;
+	}
+	.mat-focused {
+		.mat-input-placeholder {
+			color: #B71C1C;
+		}
+	}
+	.mat-input-ripple {
+		background-color: #B71C1C;
 	}
 }
