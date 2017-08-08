@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProvidersService } from './../../providers.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  	private providers: ProvidersService
+  ) {
+
+  }
 
   ngOnInit() {
+  	this.getByTitle('Attack on titan');
+  }
+
+  getByTitle(value: any) {
+  	let param: any = {}
+  	param['title'] = value;
+  	this.providers.get(param)
+  					.then((result) => {
+  						console.log(result);
+  					})
   }
 
 }

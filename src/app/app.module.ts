@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
 import { 
   MdToolbarModule,
@@ -23,6 +24,7 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { ItemComponent } from './pages/search/item/item.component';
 import { SearchbarComponent } from './pages/search/searchbar/searchbar.component';
+import { ProvidersService } from './providers.service';
 
 @NgModule({
   declarations: [
@@ -45,9 +47,10 @@ import { SearchbarComponent } from './pages/search/searchbar/searchbar.component
     MdMenuModule,
     MdListModule,
     MdInputModule,
-    MdRadioModule
+    MdRadioModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ProvidersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

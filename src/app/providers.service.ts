@@ -11,18 +11,19 @@ export class ProvidersService {
 
 	constructor(private http: Http) {
 		this.headers = new Headers({
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/x-www-form-urlencoded',
+			'Access-Control-Allow-Origin': '*'
         });
         this.options = new RequestOptions({ headers: this.headers });
 	}
 
-	get(url: string, param: any): Promise<any> {
+	get(param: any): Promise<any> {
     	let body = Object.keys(param).map(function(key){
               return encodeURIComponent(key) + '=' + encodeURIComponent(param[key]);
             }).join('&');
 
     	return this.http
-    		.get(this.API_URL + url+'?'+body, this.options)
+    		.get(this.API_URL + body, this.options)
     		.toPromise()
     		.then(this.extractData)
     		.catch(this.handleError);
@@ -42,11 +43,10 @@ export class ProvidersService {
     }
 
 	private handleError(err: any){
-		var hubUrl = HUB_URL;
 
 		if(err.status == 403)
 		{
-				window.location.href = hubUrl+'login/?product=an';
+				window.location.href = 'login/?product=an';
 		}
 		else
 		{
